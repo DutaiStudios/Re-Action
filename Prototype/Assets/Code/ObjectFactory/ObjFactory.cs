@@ -20,6 +20,11 @@ public class ObjFactory : MonoBehaviour
 	// Use this for initialization
 	private void Start ()
     {
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+
+        DebugVision.debugObjects.Add(gameObject.GetComponentInChildren<MeshRenderer>());
+
+        // Set the last production time to now.
         lastProductionTime = Time.time;
 
 		if (toProduce == null)
@@ -36,11 +41,18 @@ public class ObjFactory : MonoBehaviour
             // Update the last production time to now.
             lastProductionTime = Time.time;
 
-            // Create the new object from the prefab.
-            GameObject newInstance = Instantiate(toProduce, transform.position, Quaternion.identity);
-
-            // Apply the intial velocity to this object.
-            newInstance.GetComponent<Rigidbody>().AddForce(spawnVelocity, ForceMode.Impulse);
+            // Produce a new instance.
+            Produce();
         }
+    }
+
+    /// <summary>Makes this factory produce an object</summary>
+    public void Produce()
+    {
+        // Create the new object from the prefab.
+        GameObject newInstance = Instantiate(toProduce, transform.position, Quaternion.identity);
+
+        // Apply the intial velocity to this object.
+        newInstance.GetComponent<Rigidbody>().AddForce(spawnVelocity, ForceMode.Impulse);
     }
 }
