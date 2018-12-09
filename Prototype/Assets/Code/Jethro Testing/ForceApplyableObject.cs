@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForceApplyableObject : MonoBehaviour {
+public class ForceApplyableObject : MonoBehaviour
+{
 
     private UICube cube;
     private Rigidbody thisBody;
@@ -20,19 +21,22 @@ public class ForceApplyableObject : MonoBehaviour {
         
     }
 
-    private void OnMouseEnter()
-    {
-        
-    }
-
-    private void OnMouseExit()
-    {
-        
-    }
-
+    // When the player clicks on this object.
     private void OnMouseDown()
     {
-        thisBody.velocity = cube.currentKineticVelocity;
-        cube.UpdateCubeOrientation(Vector3.zero);
+        // Is there no energy stored? Take Energy.
+        if (cube.currentKineticEnergy == 0)
+        {
+            Debug.Log("Took Energy: " + thisBody.velocity.y);
+            cube.UpdateCubeOrientation(thisBody.velocity);
+        }
+        // Exert energy.
+        else
+        {
+            Debug.Log("Exerted Energy");
+            thisBody.velocity = cube.currentKineticVelocity;
+            cube.currentKineticEnergy = 0;
+            cube.UpdateCubeOrientation(Vector3.zero);
+        }
     }
 }

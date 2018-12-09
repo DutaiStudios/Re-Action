@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{5E2E40EF-339E-65F2-40C1-D70BDE146BB3}</ProjectGuid>
+    <ProjectGuid>{B1235EE4-71EE-C815-28F8-C3378E5ADB84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,18 +65,19 @@
     <Compile Include="Assets\Code\Jethro Testing\BoxMovement.cs" />
     <Compile Include="Assets\Code\Jethro Testing\Energy Properties\ThermalBehaviour.cs" />
     <Compile Include="Assets\Code\Jethro Testing\ForceApplyableObject.cs" />
+    <Compile Include="Assets\Code\Jethro Testing\ObjFactory.cs" />
     <Compile Include="Assets\Code\Jethro Testing\UICube.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>E:/Git/Re-Action/Prototype/Jethro_Testing/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>E:/Git/Re-Action/Prototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Git/Re-Action/Prototype/Jethro_Testing/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Git/Re-Action/Prototype/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/Git/Re-Action/Prototype/Jethro_Testing/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/Git/Re-Action/Prototype/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Git/Re-Action/Prototype/Jethro_Testing/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Git/Re-Action/Prototype/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Newest Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
