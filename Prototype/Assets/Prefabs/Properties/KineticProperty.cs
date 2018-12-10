@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForceApplyableObject : MonoBehaviour
+public class KineticProperty : MonoBehaviour
 {
 
     private UICube cube;

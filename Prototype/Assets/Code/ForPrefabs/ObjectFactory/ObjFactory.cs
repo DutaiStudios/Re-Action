@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+
 
 // Logic for spawning objects in game during runtime.
 public class ObjFactory : MonoBehaviour
@@ -17,12 +19,11 @@ public class ObjFactory : MonoBehaviour
 
     private float lastProductionTime;
 
-	// Use this for initialization
-	private void Start ()
+
+    // Use this for initialization
+    private void Start ()
     {
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-
-        DebugVision.debugObjects.Add(gameObject.GetComponentInChildren<MeshRenderer>());
 
         // Set the last production time to now.
         lastProductionTime = Time.time;
@@ -32,6 +33,7 @@ public class ObjFactory : MonoBehaviour
             Destroy(this);
         }
 	}
+
 
     private void Update()
     {
@@ -56,3 +58,23 @@ public class ObjFactory : MonoBehaviour
         newInstance.GetComponent<Rigidbody>().AddForce(spawnVelocity, ForceMode.Impulse);
     }
 }
+
+//[CustomEditor(typeof(ObjFactory))]
+//public class ObjFactoryEditor : Editor
+//{
+//    bool show = true;
+
+//    public override void OnInspectorGUI()
+//    {
+//        show = EditorGUILayout.Foldout(show, "Hello");
+//        if (show)
+//        {
+//            EditorGUILayout.IntField(2);
+//        }
+//        else
+//        {
+
+//        }
+//    }
+//}
+

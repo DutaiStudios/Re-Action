@@ -61,14 +61,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\ForPrefabs\Checkpoint\Checkpoint.cs" />
+    <Compile Include="Assets\Code\ForPrefabs\ObjectFactory\ObjFactory.cs" />
+    <Compile Include="Assets\Code\ForPrefabs\WorldLogic\WorldParser.cs" />
     <Compile Include="Assets\Code\Jethro Testing\BasicCharControl.cs" />
     <Compile Include="Assets\Code\Jethro Testing\BoxMovement.cs" />
-    <Compile Include="Assets\Code\Jethro Testing\DebugVision.cs" />
     <Compile Include="Assets\Code\Jethro Testing\Energy Properties\ThermalBehaviour.cs" />
-    <Compile Include="Assets\Code\Jethro Testing\ForceApplyableObject.cs" />
-    <Compile Include="Assets\Code\Jethro Testing\OOBCollision.cs" />
     <Compile Include="Assets\Code\Jethro Testing\UICube.cs" />
-    <Compile Include="Assets\Code\ObjectFactory\ObjFactory.cs" />
+    <Compile Include="Assets\Prefabs\Properties\KineticProperty.cs" />
+    <Compile Include="Assets\Prefabs\Properties\MagneticProperty.cs" />
+    <Compile Include="Assets\Prefabs\Properties\OOBCollision.cs" />
+    <Compile Include="Assets\Prefabs\Properties\ThermalProperty.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Git/Re-Action/Prototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
