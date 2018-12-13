@@ -67,6 +67,7 @@
     <Compile Include="Assets\Code\Jethro Testing\BasicCharControl.cs" />
     <Compile Include="Assets\Code\Jethro Testing\BoxMovement.cs" />
     <Compile Include="Assets\Code\Jethro Testing\Energy Properties\ThermalBehaviour.cs" />
+    <Compile Include="Assets\Code\Jethro Testing\ForwardsFacing.cs" />
     <Compile Include="Assets\Code\Jethro Testing\UICube.cs" />
     <Compile Include="Assets\Prefabs\Properties\KineticProperty.cs" />
     <Compile Include="Assets\Prefabs\Properties\MagneticProperty.cs" />

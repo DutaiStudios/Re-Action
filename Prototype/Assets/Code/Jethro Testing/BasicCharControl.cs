@@ -33,15 +33,15 @@ public class BasicCharControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
 		if (Input.GetKey(KeyCode.A))
         {
-            transform.eulerAngles += Vector3.down * turnSpeed * Time.deltaTime;
+            transform.eulerAngles += Vector3.down * turnSpeed * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.eulerAngles += Vector3.up * turnSpeed * Time.deltaTime;
+            transform.eulerAngles += Vector3.up * turnSpeed * Time.fixedDeltaTime;
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -57,7 +57,7 @@ public class BasicCharControl : MonoBehaviour {
 
         if (Input.GetMouseButton(2))
         {
-            followCam.transform.eulerAngles += Input.GetAxis("Mouse Y") * Vector3.left * Time.deltaTime * panRate;
+            followCam.transform.eulerAngles += Input.GetAxis("Mouse Y") * Vector3.left * Time.fixedDeltaTime * panRate;
         }
     }
 }

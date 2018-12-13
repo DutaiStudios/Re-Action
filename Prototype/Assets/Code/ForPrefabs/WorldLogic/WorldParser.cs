@@ -15,6 +15,13 @@ public class WorldParser : MonoBehaviour
     // All loaded checkpoints, organized by unique ID#.
     private Dictionary<int, Checkpoint> loadedCheckpoints = new Dictionary<int, Checkpoint>();
 
+    // All loaded factories.
+    private Dictionary<int, ObjFactory> loadedFactories = new Dictionary<int, ObjFactory>();
+
+    // All objects that are magnetic.
+    // TODO make this private set.
+    public List<MagneticProperty> magneticObjects = new List<MagneticProperty>();
+
 #if DEBUG
     // All current debug mesh renderers in the scene.
     private List<GameObject> debugObjects = new List<GameObject>();
@@ -93,13 +100,64 @@ public class WorldParser : MonoBehaviour
             checkpoints.Add(0, originCP);
         }
 
-        // Transfer the loaded checkpoints into the accesible dictionary.
+        // Transfer the loaded checkpoints into the accessible dictionary.
         foreach (KeyValuePair<int, GameObject> checkpoint in checkpoints)
         {
             loadedCheckpoints.Add(checkpoint.Key, checkpoint.Value.GetComponent<Checkpoint>());
 
             // Based on the build, handle the visual debug children.
             HandleChildDebugObjects(checkpoint.Value);
+        }
+
+        /*
+         * Parse all of the factories currently loaded in the scene.
+        */
+
+        // Declare a dictionary to store the parsed factories.
+        Dictionary<int, GameObject> factories = new Dictionary<int, GameObject>();
+
+        // Cycle through all objects tagged as checkpoints.
+        foreach (GameObject factory in GameObject.FindGameObjectsWithTag("Factory"))
+        {
+            // Get the factory script off of this object.
+            ObjFactory script = factory.GetComponent<ObjFactory>();
+
+            // Does this script not exist?
+            if (script == null)
+            {
+#if DEBUG
+                // Print a warning out to the console.
+                Debug.LogWarning("\"" + factory.name + "\" is tagged as factory but contains no factory script.");
+#endif
+            }
+            else
+            {
+                // Does this checkpoint have the same ID as another?
+                if (factories.ContainsKey(script.pointNumber))
+                {
+#if DEBUG           
+                    // Print a warning out to the console.
+                    Debug.LogWarning("Gameobject \"" + factory + "\" was denied a factory ID because ID#" +
+                        script.pointNumber + " already belongs to \"" + checkpoints[script.pointNumber].name + "\"." +
+                        " Considering deleting one of the factories or changing an identity.");
+#endif
+                }
+                else
+                {
+                    // Add this checkpoint to the dictionary.
+                    factories.Add(script.pointNumber, factory);
+                }
+            }
+        }
+        // All factories parsed.
+
+        // Transfer the loaded factories into the accessible dictionary.
+        foreach (KeyValuePair<int, GameObject> factory in factories)
+        {
+            loadedFactories.Add(factory.Key, factory.Value.GetComponent<ObjFactory>());
+
+            // Based on the build, handle the visual debug children.
+            HandleChildDebugObjects(factory.Value);
         }
     }
 

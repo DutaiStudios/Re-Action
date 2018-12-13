@@ -7,6 +7,9 @@ using UnityEditor;
 // Logic for spawning objects in game during runtime.
 public class ObjFactory : MonoBehaviour
 {
+
+    public int pointNumber;
+
     [SerializeField]
     private Vector3 spawnVelocity;
 
@@ -23,8 +26,6 @@ public class ObjFactory : MonoBehaviour
     // Use this for initialization
     private void Start ()
     {
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-
         // Set the last production time to now.
         lastProductionTime = Time.time;
 
