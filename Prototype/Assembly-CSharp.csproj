@@ -73,6 +73,7 @@
     <Compile Include="Assets\Code\Jethro Testing\UICube.cs" />
     <Compile Include="Assets\Prefabs\Properties\BuoyantProperty.cs" />
     <Compile Include="Assets\Prefabs\Properties\KineticProperty.cs" />
+    <Compile Include="Assets\Prefabs\Properties\LifespanProperty.cs" />
     <Compile Include="Assets\Prefabs\Properties\MagneticProperty.cs" />
     <Compile Include="Assets\Prefabs\Properties\OOBCollision.cs" />
     <Compile Include="Assets\Prefabs\Properties\ThermalProperty.cs" />
