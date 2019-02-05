@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Jethro/SampleScene.unity
+- path: D:/Unity/2DFile/Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
